@@ -1,13 +1,7 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { AuthProvider } from './contexts/AuthContext'
-import Navbar from './components/Layout/Navbar'
-import Footer from './components/Layout/Footer'
-import Home from './pages/Home'
-import Login from './pages/auth/Login'
-import Register from './pages/auth/Register'
-import Products from './pages/Products'
-import Dashboard from './pages/user/Dashboard'
+// ... imports موجودة سابقاً
+import ProductDetail from './pages/ProductDetail'
+import Wallet from './pages/user/Wallet'
+import Orders from './pages/user/Orders'
 
 function App() {
   return (
@@ -21,7 +15,10 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/wallet" element={<Wallet />} />
+              <Route path="/orders" element={<Orders />} />
             </Routes>
           </main>
           <Footer />
@@ -30,5 +27,3 @@ function App() {
     </AuthProvider>
   )
 }
-
-export default App
