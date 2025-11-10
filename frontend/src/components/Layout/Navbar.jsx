@@ -34,8 +34,14 @@ const Navbar = () => {
           <div className="flex items-center space-x-4 space-x-reverse">
             {user ? (
               <>
+                {/* ✅ إضافة رابط الإدارة للمدير فقط */}
+                {user.role === 'admin' && (
+                  <Link to="/admin" className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+                    لوحة التحكم
+                  </Link>
+                )}
                 <Link to="/dashboard" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                  لوحة التحكم
+                  لوحتي
                 </Link>
                 <button 
                   onClick={logout}
