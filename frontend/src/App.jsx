@@ -19,6 +19,9 @@ import AdminUsers from './pages/admin/Users'
 import AdminProducts from './pages/admin/Products'
 import AdminOrders from './pages/admin/Orders'
 
+// ✅ في ملف App.jsx، أضف هذا الاستيراد:
+import Notifications from './pages/Notifications'
+
 function App() {
   return (
     <AuthProvider>
@@ -45,6 +48,9 @@ function App() {
               <Route path="/admin/users" element={<AdminUsers />} />
               <Route path="/admin/products" element={<AdminProducts />} />
               <Route path="/admin/orders" element={<AdminOrders />} />
+              
+              {/* ✅ وفي الـ Routes، أضف: */}
+              <Route path="/notifications" element={<Notifications />} />
               
               {/* صفحات إضافية */}
               <Route path="/about" element={
