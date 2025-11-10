@@ -40,6 +40,9 @@ app.use('/api/users', require('./routes/users'));
 // ✅ إضافة رويتس الإدارة
 app.use('/api/admin', require('./routes/admin'));
 
+// ✅ إضافة بعد الـ routes الأخرى
+app.use('/api/notifications', require('./routes/notifications').router);
+
 // ✅ تحديث نموذج المستخدم ليشمل رصيد المحفظة
 const User = require('./models/User');
 
@@ -56,7 +59,8 @@ app.get('/', (req, res) => {
       payments: '/api/payments',
       wallet: '/api/wallet',
       users: '/api/users',
-      admin: '/api/admin'
+      admin: '/api/admin',
+      notifications: '/api/notifications'
     }
   });
 });
@@ -96,5 +100,6 @@ app.listen(PORT, () => {
   console.log(`🚀 السيرفر شغال على البورت ${PORT}`);
   console.log(`📊 لوحة التحكم: http://localhost:${PORT}`);
   console.log(`👑 لوحة الإدارة: http://localhost:${PORT}/api/admin`);
+  console.log(`🔔 الإشعارات: http://localhost:${PORT}/api/notifications`);
   console.log(`🔗 البيئة: ${process.env.NODE_ENV || 'development'}`);
 });
