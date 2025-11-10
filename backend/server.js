@@ -43,6 +43,9 @@ app.use('/api/admin', require('./routes/admin'));
 // ✅ إضافة بعد الـ routes الأخرى
 app.use('/api/notifications', require('./routes/notifications').router);
 
+// ✅ إضافة التقارير
+app.use('/api/admin', require('./routes/admin/reports'));
+
 // ✅ تحديث نموذج المستخدم ليشمل رصيد المحفظة
 const User = require('./models/User');
 
@@ -60,7 +63,8 @@ app.get('/', (req, res) => {
       wallet: '/api/wallet',
       users: '/api/users',
       admin: '/api/admin',
-      notifications: '/api/notifications'
+      notifications: '/api/notifications',
+      reports: '/api/admin/reports'
     }
   });
 });
@@ -101,5 +105,6 @@ app.listen(PORT, () => {
   console.log(`📊 لوحة التحكم: http://localhost:${PORT}`);
   console.log(`👑 لوحة الإدارة: http://localhost:${PORT}/api/admin`);
   console.log(`🔔 الإشعارات: http://localhost:${PORT}/api/notifications`);
+  console.log(`📈 التقارير: http://localhost:${PORT}/api/admin/reports`);
   console.log(`🔗 البيئة: ${process.env.NODE_ENV || 'development'}`);
 });
