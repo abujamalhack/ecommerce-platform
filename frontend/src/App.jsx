@@ -18,9 +18,16 @@ import AdminDashboard from './pages/admin/Dashboard'
 import AdminUsers from './pages/admin/Users'
 import AdminProducts from './pages/admin/Products'
 import AdminOrders from './pages/admin/Orders'
+import AdminCoupons from './pages/admin/Coupons'
+
+// ✅ أضف الاستيراد
+import AdminReports from './pages/admin/Reports'
 
 // ✅ في ملف App.jsx، أضف هذا الاستيراد:
 import Notifications from './pages/Notifications'
+
+// ✅ استبدل صفحة About الحالية بالاستيراد الجديد
+import About from './pages/About'
 
 function App() {
   return (
@@ -48,18 +55,24 @@ function App() {
               <Route path="/admin/users" element={<AdminUsers />} />
               <Route path="/admin/products" element={<AdminProducts />} />
               <Route path="/admin/orders" element={<AdminOrders />} />
+              <Route path="/admin/coupons" element={<AdminCoupons />} />
+              
+              {/* ✅ أضف في الـ Routes */}
+              <Route path="/admin/reports" element={<AdminReports />} />
               
               {/* ✅ وفي الـ Routes، أضف: */}
               <Route path="/notifications" element={<Notifications />} />
               
+              {/* ✅ استبدل صفحة About */}
+              <Route path="/about" element={<About />} />
+              
               {/* صفحات إضافية */}
-              <Route path="/about" element={
+              <Route path="/contact" element={
                 <div className="min-h-screen bg-white py-12">
                   <div className="container mx-auto px-4 text-center">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-6">عن المتجر</h1>
+                    <h1 className="text-4xl font-bold text-gray-800 mb-6">اتصل بنا</h1>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                      منصة متخصصة في شحن العملات الرقمية للألعاب واشتراكات التطبيقات. 
-                      نقدم خدمات سريعة وآمنة مع أفضل الأسعار في السوق.
+                      نحن هنا لمساعدتك! تواصل معنا عبر البريد الإلكتروني أو وسائل التواصل الاجتماعي.
                     </p>
                   </div>
                 </div>
