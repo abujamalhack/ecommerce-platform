@@ -1,4 +1,4 @@
-hereimport React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 import axios from 'axios'
@@ -168,6 +168,15 @@ const AdminDashboard = () => {
                 <Link to="/admin/orders" className="bg-orange-600 text-white py-3 rounded-lg font-bold hover:bg-orange-700 transition flex items-center justify-center">
                   <span className="ml-2">📦</span>
                   متابعة الطلبات
+                </Link>
+                {/* ✅ الزر المضاف */}
+                <Link to="/admin/reports" className="bg-indigo-600 text-white py-3 rounded-lg font-bold hover:bg-indigo-700 transition flex items-center justify-center">
+                  <span className="ml-2">📊</span>
+                  التقارير والإحصائيات
+                </Link>
+                <Link to="/admin/coupons" className="bg-pink-600 text-white py-3 rounded-lg font-bold hover:bg-pink-700 transition flex items-center justify-center">
+                  <span className="ml-2">🎫</span>
+                  إدارة الكوبونات
                 </Link>
               </div>
             </div>
