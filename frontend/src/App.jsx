@@ -13,6 +13,12 @@ import Dashboard from './pages/user/Dashboard'
 import Wallet from './pages/user/Wallet'
 import Orders from './pages/user/Orders'
 
+// ✅ إضافة مسارات الإدارة
+import AdminDashboard from './pages/admin/Dashboard'
+import AdminUsers from './pages/admin/Users'
+import AdminProducts from './pages/admin/Products'
+import AdminOrders from './pages/admin/Orders'
+
 function App() {
   return (
     <AuthProvider>
@@ -33,6 +39,12 @@ function App() {
               
               {/* صفحات المستخدم */}
               <Route path="/dashboard" element={<Dashboard />} />
+              
+              {/* ✅ صفحات الإدارة */}
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin/users" element={<AdminUsers />} />
+              <Route path="/admin/products" element={<AdminProducts />} />
+              <Route path="/admin/orders" element={<AdminOrders />} />
               
               {/* صفحات إضافية */}
               <Route path="/about" element={
